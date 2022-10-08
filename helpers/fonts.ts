@@ -1,6 +1,10 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
 
 const inter = {
+	extraLight: {
+		family: 'Inter',
+		weight: 100,
+	},
 	light: {
 		family: 'Inter',
 		weight: 300,
@@ -25,6 +29,10 @@ const inter = {
 
 export default {
 	inter: {
+		extraLight: (): FlattenSimpleInterpolation => css`
+			font-family: ${inter.extraLight.family}, sans-serif;
+			font-weight: ${inter.extraLight.weight};
+		`,
 		light: (): FlattenSimpleInterpolation => css`
 			font-family: ${inter.light.family}, sans-serif;
 			font-weight: ${inter.light.weight};

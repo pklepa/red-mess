@@ -1,5 +1,8 @@
 import * as React from 'react';
 import S from './SiteFooter.styles';
+import IconFacebook from '@img/icon-facebook.svg';
+import IconInstagram from '@img/icon-instagram.svg';
+import IconYoutube from '@img/icon-youtube.svg';
 
 export type SiteFooterProps = {
 	email: string;
@@ -7,7 +10,6 @@ export type SiteFooterProps = {
 		facebook?: string;
 		instagram?: string;
 		youtube?: string;
-		spotify?: string;
 	};
 };
 
@@ -15,10 +17,33 @@ const SiteFooter: React.FC<SiteFooterProps> = ({ email, socialLinks }) => {
 	return (
 		<S.Container>
 			<S.SocialLinkCollection>
-				{socialLinks.facebook && <S.SocialLink></S.SocialLink>}
-				{socialLinks.instagram && <S.SocialLink></S.SocialLink>}
-				{socialLinks.youtube && <S.SocialLink></S.SocialLink>}
-				{socialLinks.spotify && <S.SocialLink></S.SocialLink>}
+				{socialLinks.facebook && (
+					<S.SocialLink
+						target="_blank"
+						rel="noopener noreferrer"
+						href={socialLinks.facebook}
+					>
+						<IconFacebook />
+					</S.SocialLink>
+				)}
+				{socialLinks.instagram && (
+					<S.SocialLink
+						target="_blank"
+						rel="noopener noreferrer"
+						href={socialLinks.instagram}
+					>
+						<IconInstagram />
+					</S.SocialLink>
+				)}
+				{socialLinks.youtube && (
+					<S.SocialLink
+						target="_blank"
+						rel="noopener noreferrer"
+						href={socialLinks.youtube}
+					>
+						<IconYoutube />
+					</S.SocialLink>
+				)}
 			</S.SocialLinkCollection>
 
 			<S.Email>{email}</S.Email>

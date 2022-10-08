@@ -24,7 +24,7 @@ const SocialLink = styled.a`
 	color: ${brand.white};
 
 	svg {
-		width: 24px;
+		height: 25px;
 	}
 `;
 

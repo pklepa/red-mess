@@ -18,7 +18,8 @@
 		"paths": {
 			"@components/*": ["components/*"],
 			"@containers/*": ["containers/*"],
-			"@helpers/*": ["helpers/*"]
+			"@helpers/*": ["helpers/*"],
+			"@img/*": ["img/*"]
 		}
 	},
 	"include": [
