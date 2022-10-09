@@ -1,5 +1,6 @@
 import { brand } from '@helpers/brand';
 import fonts from '@helpers/fonts';
+import { Device, from } from '@helpers/media';
 import styled from 'styled-components';
 
 const Container = styled.footer`
@@ -7,10 +8,15 @@ const Container = styled.footer`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 16px;
-	padding: 48px 24px;
+	gap: 10px;
+	padding: 24px;
 
 	justify-self: flex-end;
+
+	@media ${from(Device.TabletLarge)} {
+		padding: 48px 24px;
+		gap: 16px;
+	}
 `;
 
 const SocialLinkCollection = styled.div`
@@ -46,7 +52,13 @@ const Email = styled.span`
 		width: 100%;
 		height: 2px;
 		background-color: ${brand.red};
-		margin-bottom: 16px;
+		margin-bottom: 10px;
+	}
+
+	@media ${from(Device.TabletLarge)} {
+		&::before {
+			margin-bottom: 16px;
+		}
 	}
 `;
 
