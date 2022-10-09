@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import * as React from 'react';
 
-// TODO: Remove this file once project is done
 export type PageHeadProps = {
 	title?: string;
 	description?: string;

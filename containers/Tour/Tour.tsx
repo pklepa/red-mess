@@ -6,6 +6,7 @@ import { footerDefaultArgs } from '@components/Widgets/SiteFooter/SiteFooter.arg
 import ToBeAnnouncedText from '@img/text-svg/ToBeAnnouncedText.svg';
 import SiteNav from '@components/Widgets/SiteNav/SiteNav';
 import { siteNavDefaultArgs } from '@components/Widgets/SiteNav/SiteNav.args';
+import NoiseOverlayStyles from '@components/NoiseOverlay/NoiseOverlay.styles';
 
 export type TourProps = {};
 
@@ -13,9 +14,12 @@ const Tour: React.FC<TourProps> = () => {
 	return (
 		<>
 			<PageHead
-				title="Tour - Red Mess"
+				title="Tour - Red Mess Music"
 				description="Red Mess - Tour schedule"
 			/>
+
+			<NoiseOverlayStyles.Overlay />
+
 			<S.Wrapper>
 				<SiteNav {...siteNavDefaultArgs} />
 

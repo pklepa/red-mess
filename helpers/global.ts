@@ -12,4 +12,5 @@ export const zIndex = {
 	navigation: 100,
 	modal: 1000,
 	priority: 10000,
+	noise: 10001,
 };

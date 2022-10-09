@@ -2,7 +2,10 @@ import * as React from 'react';
 import S from './SiteNav.styles';
 import IconBurger from '@img/icon-burger.svg';
 import IconX from '@img/icon-x.svg';
-import TourText from '@img/text-svg/TourText.svg';
+
+import TourText from '@img/text-svg/text-tour.svg';
+import ShopText from '@img/text-svg/text-shop.svg';
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -21,7 +24,8 @@ const SiteNav: React.FC<SiteNavProps> = ({ items }) => {
 		<>
 			<S.Container>
 				<S.CurrentAnchor>
-					<TourText />
+					{asPath === '/tour' && <TourText />}
+					{asPath === '/shop' && <ShopText />}
 				</S.CurrentAnchor>
 
 				<S.BurgerMenuButton onClick={() => setIsMobileMenuOpen(true)}>

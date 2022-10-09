@@ -1,20 +1,21 @@
+import { brand } from '@helpers/brand';
 import styled from 'styled-components';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+	color: ${brand.white};
+	background-color: ${brand.black};
 
-const Container = styled.section`
-	width: 100%;
-	height: 100%;
-	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+`;
 
-	color: white;
-	display: grid;
-	place-items: center;
+const Content = styled.main`
+	flex-grow: 1;
 `;
 
 const HomeStyles = {
 	Wrapper,
-	Container,
+	Content,
 };
 
 export default HomeStyles;
