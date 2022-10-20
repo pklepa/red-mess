@@ -8,6 +8,11 @@ export const ButtonReset = css`
 	border-radius: 0px;
 `;
 
+export const navHeight = {
+	desktop: 80,
+	mobile: 80,
+}
+
 export const zIndex = {
 	navigation: 100,
 	modal: 1000,

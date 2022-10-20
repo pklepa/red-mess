@@ -14,7 +14,7 @@ const Overlay = styled.div`
 
 	/* filter: invert(1);
 	opacity: 0.075; */
-	opacity: 0.3;
+	opacity: 0.2;
 `;
 
 const NoiseOverlayStyles = {

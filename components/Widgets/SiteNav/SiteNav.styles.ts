@@ -1,16 +1,21 @@
 import { brand } from '@helpers/brand';
 import fonts from '@helpers/fonts';
-import { ButtonReset, zIndex } from '@helpers/global';
+import { ButtonReset, navHeight, zIndex } from '@helpers/global';
+import { from, Device } from '@helpers/media';
 import styled, { css } from 'styled-components';
 
 const Container = styled.nav`
 	background-color: ${brand.white};
-	height: 80px;
+	height: ${navHeight.mobile}px;
 
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0px 24px;
+
+	@media ${from(Device.TabletLarge)} {
+		height: ${navHeight.desktop}px;
+	}
 `;
 
 const CurrentAnchor = styled.div`

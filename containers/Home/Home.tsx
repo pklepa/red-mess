@@ -10,6 +10,10 @@ import { footerDefaultArgs } from '@components/Widgets/SiteFooter/SiteFooter.arg
 import PageHead from '@components/PageHead/PageHead';
 import LandingBanner from '@components/Widgets/LandingBanner/LandingBanner';
 
+import LinkList from '@components/Widgets/LinkList/LinkList';
+import { linkListDefaultargs } from '@components/Widgets/LinkList/LinkList.args';
+import FullWidthVideo from '@components/Widgets/FullWidthVideo/FullWidthVideo';
+
 export type HomeProps = {};
 
 const Home: React.FC<HomeProps> = () => {
@@ -26,7 +30,13 @@ const Home: React.FC<HomeProps> = () => {
 				<SiteNav {...siteNavDefaultArgs} />
 
 				<S.Content>
-					<LandingBanner />
+					<S.BannerWrapper>
+						<LandingBanner />
+					</S.BannerWrapper>
+
+					<FullWidthVideo />
+
+					<LinkList {...linkListDefaultargs} />
 				</S.Content>
 
 				<SiteFooter {...footerDefaultArgs} />
