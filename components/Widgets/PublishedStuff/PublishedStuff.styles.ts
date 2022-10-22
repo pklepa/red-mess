@@ -7,27 +7,10 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
-	margin-bottom: 40px;
+	margin-bottom: 64px;
 
 	@media ${from(Device.TabletLarge)} {
 		margin-bottom: 80px;
-	}
-`;
-
-const Title = styled.h1`
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-
-	> svg {
-		display: block;
-		height: 20px;
-	}
-
-	@media ${from(Device.TabletLarge)} {
-		> svg {
-			height: 32px;
-		}
 	}
 `;
 
@@ -121,7 +104,6 @@ const ItemOverlayContent = styled.p`
 const PublishedStuffStyles = {
 	CarouselWrapper,
 	Container,
-	Title,
 	Carousel,
 	ItemWrapper,
 	ItemOverlay,

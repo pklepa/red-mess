@@ -10,6 +10,7 @@ import TextInstagram from '@img/text-svg/text-instagram.svg';
 import TextSpotify from '@img/text-svg/text-spotify.svg';
 import TextTidal from '@img/text-svg/text-tidal.svg';
 import TextYoutube from '@img/text-svg/text-youtube.svg';
+import SectionTitle from '@components/SectionTitle/SectionTitle';
 
 type ItemText =
 	| 'amazon'
@@ -65,9 +66,9 @@ const LinkList: React.FC<LinkListProps> = ({ items, title }) => {
 
 	return (
 		<S.Container>
-			<S.Title aria-label={title}>
+			<SectionTitle label={title}>
 				<TextFindUsOn />
-			</S.Title>
+			</SectionTitle>
 
 			<S.Content>
 				{items.map((item, index) => (

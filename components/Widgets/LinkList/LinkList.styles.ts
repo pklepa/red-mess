@@ -13,18 +13,6 @@ const Container = styled.div`
 	}
 `;
 
-const Title = styled.div`
-	height: 24px;
-
-	svg {
-		height: 100%;
-	}
-
-	@media ${from(Device.TabletLarge)} {
-		height: 32px;
-	}
-`;
-
 const Content = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
@@ -43,7 +31,7 @@ const Content = styled.div`
 const Item = styled.a`
 	list-style: none;
 	padding: 0;
-	height: 16px;
+	height: 14px;
 
 	display: grid;
 	place-items: center;
@@ -59,7 +47,6 @@ const Item = styled.a`
 
 const LinkListStyles = {
 	Container,
-	Title,
 	Content,
 	Item,
 };

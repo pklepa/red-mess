@@ -15,6 +15,7 @@ import ImagePhantomLimb from 'public/releases/item-phantom-limb.jpg';
 import ImageResearchChemicals from 'public/releases/item-research-chemicals.jpg';
 import { Device, until } from '@helpers/media';
 import useMediaQuery from 'hooks/useMediaQuery';
+import SectionTitle from '@components/SectionTitle/SectionTitle';
 // import useMedia from 'hooks/useMedia';
 
 type ItemId =
@@ -35,9 +36,10 @@ type Item = {
 
 export type PublishedStuffProps = {
 	items: Item[];
+	title: string;
 };
 
-const PublishedStuff: React.FC<PublishedStuffProps> = ({ items }) => {
+const PublishedStuff: React.FC<PublishedStuffProps> = ({ items, title }) => {
 	const isMobile = useMediaQuery(until(Device.TabletLarge));
 
 	const [emblaRef] = useEmblaCarousel(
@@ -72,10 +74,10 @@ const PublishedStuff: React.FC<PublishedStuffProps> = ({ items }) => {
 
 	return (
 		<S.Container>
-			<S.Title>
+			<SectionTitle label={title}>
 				<TextPublished />
 				<TextStuff />
-			</S.Title>
+			</SectionTitle>
 
 			<S.CarouselWrapper>
 				<S.Carousel className="embla" ref={emblaRef}>

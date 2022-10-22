@@ -2,6 +2,7 @@ import { PublishedStuffProps } from './PublishedStuff';
 
 // TODO: This information should be coming from the CMS
 export const publishedStuffDefaultArgs: PublishedStuffProps = {
+	title: 'Published Stuff',
 	items: [
 		{
 			id: 'breathtaker',
