@@ -6,6 +6,7 @@ const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 32px;
+	margin-bottom: 40px;
 
 	@media ${from(Device.TabletLarge)} {
 		gap: 40px;
@@ -13,10 +14,14 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-	height: 32px;
+	height: 24px;
 
 	svg {
 		height: 100%;
+	}
+
+	@media ${from(Device.TabletLarge)} {
+		height: 32px;
 	}
 `;
 
@@ -38,13 +43,17 @@ const Content = styled.div`
 const Item = styled.a`
 	list-style: none;
 	padding: 0;
-	height: 18px;
+	height: 16px;
 
 	display: grid;
 	place-items: center;
 
 	svg {
 		height: 100%;
+	}
+
+	@media ${from(Device.TabletLarge)} {
+		height: 18px;
 	}
 `;
 

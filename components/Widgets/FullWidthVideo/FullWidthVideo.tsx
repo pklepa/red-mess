@@ -11,7 +11,7 @@ const FullWidthVideo: React.FC<FullWidthVideoProps> = () => {
 		target: elementRef,
 		offset: ['start end', 'center end'],
 	});
-	const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+	const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
 	return (
 		<S.Container ref={elementRef}>

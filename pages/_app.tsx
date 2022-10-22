@@ -2,8 +2,11 @@ import { brand } from '@helpers/brand';
 import fonts from '@helpers/fonts';
 import type { AppProps } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
+  ${reset}
+
   body {
     margin: 0;
     padding: 0;

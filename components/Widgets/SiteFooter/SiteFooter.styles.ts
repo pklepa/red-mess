@@ -12,6 +12,7 @@ const Container = styled.footer`
 	padding: 24px;
 
 	justify-self: flex-end;
+	background-color: ${brand.black};
 
 	@media ${from(Device.TabletLarge)} {
 		padding: 48px 24px;

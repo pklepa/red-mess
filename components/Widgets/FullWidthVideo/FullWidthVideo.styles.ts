@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Container = styled.section`
 	width: 100%;
+	background: linear-gradient(0deg, ${brand.white} 50%, ${brand.black} 50%);
 `;
 
 const VideoPlaceholder = styled(m.div)`

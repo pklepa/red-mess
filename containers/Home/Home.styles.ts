@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
 	color: ${brand.white};
-	background-color: ${brand.black};
-	/* background-color: ${brand.white}; */
+	/* background-color: ${brand.black}; */
+	background-color: ${brand.white};
 
 	display: flex;
 	flex-direction: column;
@@ -17,6 +17,7 @@ const Content = styled.main`
 
 const BannerWrapper = styled.div`
 	min-height: calc(100vh - ${navHeight.mobile}px);
+	background-color: ${brand.black};
 `;
 
 const HomeStyles = {
