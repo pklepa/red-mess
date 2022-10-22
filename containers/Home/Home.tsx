@@ -10,9 +10,13 @@ import { footerDefaultArgs } from '@components/Widgets/SiteFooter/SiteFooter.arg
 import PageHead from '@components/PageHead/PageHead';
 import LandingBanner from '@components/Widgets/LandingBanner/LandingBanner';
 
+import FullWidthVideo from '@components/Widgets/FullWidthVideo/FullWidthVideo';
+
 import LinkList from '@components/Widgets/LinkList/LinkList';
 import { linkListDefaultargs } from '@components/Widgets/LinkList/LinkList.args';
-import FullWidthVideo from '@components/Widgets/FullWidthVideo/FullWidthVideo';
+
+import PublishedStuff from '@components/Widgets/PublishedStuff/PublishedStuff';
+import { publishedStuffDefaultArgs } from '@components/Widgets/PublishedStuff/PublishedStuff.args';
 
 export type HomeProps = {};
 
@@ -35,6 +39,8 @@ const Home: React.FC<HomeProps> = () => {
 					</S.BannerWrapper>
 
 					<FullWidthVideo />
+
+					<PublishedStuff {...publishedStuffDefaultArgs} />
 
 					<LinkList {...linkListDefaultargs} />
 				</S.Content>
