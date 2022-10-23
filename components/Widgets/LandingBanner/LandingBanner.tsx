@@ -16,6 +16,7 @@ const LandingBanner: React.FC<LandingBannerProps> = () => {
 					width={1920}
 					height={1143}
 					layout="responsive"
+					alt="Red Mess Trio posing. Tiago is standing in to the left looking towards the horizon. Douglas is standing to the right wearing a cap with the saying 'Fck your bad vibes'. Lucas is sitting in the centre, his long hair thrown over his chest."
 				/>
 			</S.FeaturedImage>
 

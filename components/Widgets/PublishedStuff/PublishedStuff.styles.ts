@@ -97,7 +97,7 @@ const ItemOverlayContent = styled.p`
 	color: ${brand.white};
 
 	strong {
-		${fonts.inter.bold};
+		${fonts.exo2.bold};
 	}
 `;
 

@@ -11,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    ${fonts.inter.base};
+    ${fonts.exo2.base};
+    font-size: 18px;
 
     background-color: ${brand.black};
     color: ${brand.white};

@@ -18,6 +18,9 @@ import { linkListDefaultargs } from '@components/Widgets/LinkList/LinkList.args'
 import PublishedStuff from '@components/Widgets/PublishedStuff/PublishedStuff';
 import { publishedStuffDefaultArgs } from '@components/Widgets/PublishedStuff/PublishedStuff.args';
 
+import AboutUs from '@components/Widgets/AboutUs/AboutUs';
+import { aboutUsDefaultArgs } from '@components/Widgets/AboutUs/AboutUs.args';
+
 export type HomeProps = {};
 
 const Home: React.FC<HomeProps> = () => {
@@ -43,6 +46,8 @@ const Home: React.FC<HomeProps> = () => {
 					<PublishedStuff {...publishedStuffDefaultArgs} />
 
 					<LinkList {...linkListDefaultargs} />
+
+					<AboutUs {...aboutUsDefaultArgs} />
 				</S.Content>
 
 				<SiteFooter {...footerDefaultArgs} />

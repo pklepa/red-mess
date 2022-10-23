@@ -47,25 +47,73 @@ const PublishedStuff: React.FC<PublishedStuffProps> = ({ items, title }) => {
 		[ClassNames({ selected: 'is-selected' })]
 	);
 
-	const renderImage = (id: ItemId): React.ReactNode => {
+	const renderImage = (id: ItemId, name: string): React.ReactNode => {
 		switch (id) {
 			case 'breathtaker':
-				return <Image src={ImageBreathtaker} sizes="800px" />;
+				return (
+					<Image
+						src={ImageBreathtaker}
+						sizes="800px"
+						width={800}
+						height={800}
+						alt={name}
+					/>
+				);
 
 			case 'crimson':
-				return <Image src={ImageCrimson} sizes="800px" />;
+				return (
+					<Image
+						src={ImageCrimson}
+						sizes="800px"
+						width={800}
+						height={800}
+						alt={name}
+					/>
+				);
 
 			case 'drowning-in-red':
-				return <Image src={ImageDrowningInRed} sizes="800px" />;
+				return (
+					<Image
+						src={ImageDrowningInRed}
+						sizes="800px"
+						width={800}
+						height={800}
+						alt={name}
+					/>
+				);
 
 			case 'into-the-mess':
-				return <Image src={ImageIntoTheMess} sizes="800px" />;
+				return (
+					<Image
+						src={ImageIntoTheMess}
+						sizes="800px"
+						width={800}
+						height={800}
+						alt={name}
+					/>
+				);
 
 			case 'phantom-limb':
-				return <Image src={ImagePhantomLimb} sizes="800px" />;
+				return (
+					<Image
+						src={ImagePhantomLimb}
+						sizes="800px"
+						width={800}
+						height={800}
+						alt={name}
+					/>
+				);
 
 			case 'research-chemicals':
-				return <Image src={ImageResearchChemicals} sizes="800px" />;
+				return (
+					<Image
+						src={ImageResearchChemicals}
+						sizes="800px"
+						width={800}
+						height={800}
+						alt={name}
+					/>
+				);
 
 			default:
 				return null;
@@ -87,7 +135,7 @@ const PublishedStuff: React.FC<PublishedStuffProps> = ({ items, title }) => {
 								className="embla__slide"
 								key={`published-stuff-item-${index}`}
 							>
-								{renderImage(item.id)}
+								{renderImage(item.id, item.name)}
 
 								<S.ItemOverlay>
 									<S.ItemOverlayContent>
