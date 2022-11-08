@@ -60,7 +60,7 @@ const Shop: React.FC = () => {
 			<NoiseOverlayStyles.Overlay />
 
 			<S.Wrapper>
-				<SiteNav {...siteNavDefaultArgs} />
+				<SiteNav {...siteNavDefaultArgs} title="shop" />
 
 				<S.Content>
 					<S.Inner>

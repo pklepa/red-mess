@@ -4,8 +4,7 @@ import { ButtonReset, navHeight, zIndex } from '@helpers/global';
 import { from, Device } from '@helpers/media';
 import styled, { css } from 'styled-components';
 
-const Container = styled.nav`
-	background-color: ${brand.white};
+const Container = styled.nav<{ hasTitle: boolean }>`
 	height: ${navHeight.mobile}px;
 
 	display: flex;
@@ -13,12 +12,23 @@ const Container = styled.nav`
 	justify-content: space-between;
 	padding: 0px 24px;
 
+	position: sticky;
+	top: 0;
+	z-index: 5;
+
+	${({ hasTitle }) =>
+		hasTitle &&
+		css`
+			background-color: ${brand.white};
+		`}
+
 	@media ${from(Device.TabletLarge)} {
 		height: ${navHeight.desktop}px;
 	}
 `;
 
-const CurrentAnchor = styled.div`
+const Title = styled.strong`
+	display: block;
 	height: 25px;
 
 	svg {
@@ -104,7 +114,7 @@ const CloseButton = styled.button.attrs({ type: 'button' })`
 
 const SiteNavStyles = {
 	Container,
-	CurrentAnchor,
+	Title,
 	BurgerMenuButton,
 	MobileMenu,
 	List,

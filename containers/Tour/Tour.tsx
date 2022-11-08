@@ -21,7 +21,7 @@ const Tour: React.FC<TourProps> = () => {
 			<NoiseOverlayStyles.Overlay />
 
 			<S.Wrapper>
-				<SiteNav {...siteNavDefaultArgs} />
+				<SiteNav {...siteNavDefaultArgs} title="tour" />
 
 				<S.Content>
 					<S.Disclaimer aria-label="To Be Announced">

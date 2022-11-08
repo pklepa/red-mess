@@ -14,19 +14,39 @@ export type SiteNavProps = {
 		text: string;
 		url: string;
 	}[];
+
+	title: 'tour' | 'shop' | 'none';
 };
 
-const SiteNav: React.FC<SiteNavProps> = ({ items }) => {
+const SiteNav: React.FC<SiteNavProps> = ({ items, title }) => {
 	const { asPath } = useRouter();
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
+	const renderTitle = (): React.ReactNode => {
+		switch (title) {
+			case 'tour':
+				return (
+					<S.Title aria-label="tour">
+						<TourText />
+					</S.Title>
+				);
+
+			case 'shop':
+				return (
+					<S.Title aria-label="shop">
+						<ShopText />
+					</S.Title>
+				);
+
+			default:
+				return <S.Title />;
+		}
+	};
+
 	return (
 		<>
-			<S.Container>
-				<S.CurrentAnchor>
-					{asPath === '/tour' && <TourText />}
-					{asPath === '/shop' && <ShopText />}
-				</S.CurrentAnchor>
+			<S.Container hasTitle={title !== 'none'}>
+				{renderTitle()}
 
 				<S.BurgerMenuButton onClick={() => setIsMobileMenuOpen(true)}>
 					<IconBurger />

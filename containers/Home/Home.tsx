@@ -34,7 +34,7 @@ const Home: React.FC<HomeProps> = () => {
 			<NoiseOverlayStyles.Overlay />
 
 			<S.Wrapper>
-				<SiteNav {...siteNavDefaultArgs} />
+				<SiteNav {...siteNavDefaultArgs} title="none" />
 
 				<S.Content>
 					<S.BannerWrapper>

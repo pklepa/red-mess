@@ -101,6 +101,15 @@ const ItemOverlayContent = styled.p`
 	}
 `;
 
+const IframeWrapper = styled.div`
+	width: 100%;
+	min-height: 406px;
+	padding: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+
 const PublishedStuffStyles = {
 	CarouselWrapper,
 	Container,
@@ -108,6 +117,7 @@ const PublishedStuffStyles = {
 	ItemWrapper,
 	ItemOverlay,
 	ItemOverlayContent,
+	IframeWrapper,
 };
 
 export default PublishedStuffStyles;

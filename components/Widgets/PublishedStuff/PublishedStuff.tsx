@@ -16,6 +16,7 @@ import ImageResearchChemicals from 'public/releases/item-research-chemicals.jpg'
 import { Device, until } from '@helpers/media';
 import useMediaQuery from 'hooks/useMediaQuery';
 import SectionTitle from '@components/SectionTitle/SectionTitle';
+import useIsMounted from 'hooks/useIsMounted';
 // import useMedia from 'hooks/useMedia';
 
 type ItemId =
@@ -41,6 +42,7 @@ export type PublishedStuffProps = {
 
 const PublishedStuff: React.FC<PublishedStuffProps> = ({ items, title }) => {
 	const isMobile = useMediaQuery(until(Device.TabletLarge));
+	const isMounted = useIsMounted();
 
 	const [emblaRef] = useEmblaCarousel(
 		{ loop: false, align: isMobile ? 'center' : 'start', inViewThreshold: 1 },
@@ -148,6 +150,29 @@ const PublishedStuff: React.FC<PublishedStuffProps> = ({ items, title }) => {
 					</div>
 				</S.Carousel>
 			</S.CarouselWrapper>
+
+			<S.IframeWrapper>
+				{/* <iframe
+					style={{ border: 0, width: '350px', height: '720px' }}
+					src="https://bandcamp.com/EmbeddedPlayer/album=3529592666/size=large/bgcol=ffffff/linkcol=de270f/transparent=true/"
+					seamless
+					>
+					<a href="https://redmess.bandcamp.com/album/breathtaker">
+						Breathtaker by Red Mess
+					</a>
+				</iframe> */}
+				{isMounted && (
+					<iframe
+						style={{ border: 0, width: '400px', height: '406px' }}
+						src="https://bandcamp.com/EmbeddedPlayer/album=3529592666/size=large/bgcol=ffffff/linkcol=de270f/artwork=none/transparent=true/"
+						seamless
+					>
+						<a href="https://redmess.bandcamp.com/album/breathtaker">
+							Breathtaker by Red Mess
+						</a>
+					</iframe>
+				)}
+			</S.IframeWrapper>
 		</S.Container>
 	);
 };
