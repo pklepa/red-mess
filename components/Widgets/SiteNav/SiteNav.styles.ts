@@ -2,6 +2,8 @@ import { brand } from '@helpers/brand';
 import fonts from '@helpers/fonts';
 import { ButtonReset, navHeight, zIndex } from '@helpers/global';
 import { from, Device } from '@helpers/media';
+import { horizontalSlideIn } from '@helpers/variants';
+import { m } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 const Container = styled.nav<{ hasTitle: boolean }>`
@@ -12,13 +14,15 @@ const Container = styled.nav<{ hasTitle: boolean }>`
 	justify-content: space-between;
 	padding: 0px 24px;
 
-	position: sticky;
+	position: fixed;
 	top: 0;
 	z-index: 5;
+	width: 100%;
 
 	${({ hasTitle }) =>
 		hasTitle &&
 		css`
+			position: sticky;
 			background-color: ${brand.white};
 		`}
 
@@ -49,7 +53,12 @@ const BurgerMenuButton = styled.button.attrs({ type: 'button' })`
 	padding: 0 12px;
 `;
 
-const MobileMenu = styled.div`
+const MobileMenu = styled(m.div).attrs({
+	initial: 'hidden',
+	animate: 'visible',
+	exit: 'hidden',
+	variants: horizontalSlideIn('-100%', 0.4),
+})`
 	position: fixed;
 	z-index: ${zIndex.priority};
 	height: 100vh;

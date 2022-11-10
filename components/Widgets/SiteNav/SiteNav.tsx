@@ -8,6 +8,8 @@ import ShopText from '@img/text-svg/text-shop.svg';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { AnimatePresence } from 'framer-motion';
+import { withMotion } from 'hocs/withMotion';
 
 export type SiteNavProps = {
 	items: {
@@ -53,25 +55,27 @@ const SiteNav: React.FC<SiteNavProps> = ({ items, title }) => {
 				</S.BurgerMenuButton>
 			</S.Container>
 
-			{isMobileMenuOpen && (
-				<S.MobileMenu>
-					<S.List>
-						{items.map((item) => (
-							<S.ListItem key={item.text} isCurrent={asPath === item.url}>
-								<Link href={item.url}>
-									<span>{item.text}</span>
-								</Link>
-							</S.ListItem>
-						))}
-					</S.List>
+			<AnimatePresence>
+				{isMobileMenuOpen && (
+					<S.MobileMenu key="mobile-menu">
+						<S.List>
+							{items.map((item) => (
+								<S.ListItem key={item.text} isCurrent={asPath === item.url}>
+									<Link href={item.url}>
+										<span>{item.text}</span>
+									</Link>
+								</S.ListItem>
+							))}
+						</S.List>
 
-					<S.CloseButton onClick={() => setIsMobileMenuOpen(false)}>
-						<IconX />
-					</S.CloseButton>
-				</S.MobileMenu>
-			)}
+						<S.CloseButton onClick={() => setIsMobileMenuOpen(false)}>
+							<IconX />
+						</S.CloseButton>
+					</S.MobileMenu>
+				)}
+			</AnimatePresence>
 		</>
 	);
 };
 
-export default SiteNav;
+export default withMotion(SiteNav);
