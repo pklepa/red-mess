@@ -4,35 +4,35 @@ export const linkListDefaultargs: LinkListProps = {
 	items: [
 		{
 			text: 'amazon',
-			url: '#',
+			url: 'https://music.amazon.com/artists/B072MSJ5CV/red-mess',
 		},
 		{
 			text: 'apple',
-			url: '#',
+			url: 'https://music.apple.com/us/artist/red-mess/1246951923',
 		},
 		{
 			text: 'bandcamp',
-			url: '#',
+			url: 'https://redmess.bandcamp.com/music',
 		},
 		{
 			text: 'deezer',
-			url: '#',
+			url: 'https://www.deezer.com/en/artist/8627050',
 		},
 		{
 			text: 'instagram',
-			url: '#',
+			url: 'https://www.instagram.com/redmessmusic',
 		},
 		{
 			text: 'spotify',
-			url: '#',
+			url: 'https://www.instagram.com/redmessmusic',
 		},
 		{
 			text: 'tidal',
-			url: '#',
+			url: 'https://listen.tidal.com/album/76645805',
 		},
 		{
 			text: 'youtube',
-			url: '#',
+			url: 'https://www.youtube.com/channel/UCkGHnBinOGrDcGVowBWyu8g',
 		},
 	],
 

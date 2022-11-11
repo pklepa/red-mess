@@ -87,6 +87,10 @@ const LargeText = styled.h4`
 		padding-top: 8px;
 		border-top: 2px solid ${brand.red};
 	}
+
+	@media ${from(Device.TabletLarge)} {
+		font-size: 24px;
+	}
 `;
 
 const Inner = styled.div`
@@ -98,6 +102,10 @@ const Inner = styled.div`
 	@media ${from(Device.TabletLarge)} {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+	}
+
+	@media ${from(Device.DesktopSmall)} {
+		grid-template-columns: 2fr 3fr;
 	}
 `;
 

@@ -1,5 +1,4 @@
 import { brand } from '@helpers/brand';
-import { navHeight } from '@helpers/global';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`

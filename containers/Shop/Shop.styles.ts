@@ -56,16 +56,20 @@ const baseButtonStyles = css`
 	padding: 10px 16px;
 	border: 1px solid ${brand.red};
 	border-radius: 4px;
-	text-align: center;
-	${fonts.inter.base};
-	color: ${brand.white};
-	font-size: 18px;
+	display: flex;
+	justify-content: center;
 `;
 
 const ExternalLink = styled.a`
 	${baseButtonStyles};
-	display: block;
 	text-decoration: none;
+`;
+
+const ButtonText = styled.span`
+	text-align: center;
+	${fonts.inter.base};
+	color: ${brand.white};
+	font-size: 18px;
 `;
 
 const Button = styled.button.attrs({ type: 'button' })`
@@ -84,6 +88,7 @@ const ShopStyles = {
 	SectionTitle,
 	ButtonsList,
 	Button,
+	ButtonText,
 	ExternalLink,
 };
 

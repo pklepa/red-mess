@@ -8,47 +8,22 @@ import { siteNavDefaultArgs } from '@components/Widgets/SiteNav/SiteNav.args';
 import RecordsText from '@img/text-svg/text-records.svg';
 import MerchText from '@img/text-svg/text-merch.svg';
 import NoiseOverlayStyles from '@components/NoiseOverlay/NoiseOverlay.styles';
+import { defaultShopArgs } from './Shop.args';
+import DOMPurify from 'isomorphic-dompurify';
+
+type LinkEntry = {
+	text: string;
+	url: string;
+};
 
 export type ShopProps = {
-	records: {
-		text: string;
-		region: string;
-		url: string;
-	}[];
-
-	merch: {
-		email?: boolean;
-		instagram?: boolean;
-		live?: boolean;
-	};
+	records: LinkEntry[];
+	merch: LinkEntry[];
 };
 
 const Shop: React.FC = () => {
 	// FIXME: this information should be coming from the CMS
-	const { records, merch }: ShopProps = {
-		records: [
-			{
-				text: 'Cianeto Discos',
-				region: 'Brasil',
-				url: '#',
-			},
-			{
-				text: 'All Good Clean Records',
-				region: 'Norway',
-				url: '#',
-			},
-			{
-				text: 'Stickman Records',
-				region: 'Germany',
-				url: '#',
-			},
-		],
-
-		merch: {
-			email: true,
-			instagram: true,
-		},
-	};
+	const { records, merch } = defaultShopArgs;
 
 	return (
 		<>
@@ -70,16 +45,22 @@ const Shop: React.FC = () => {
 							</S.SectionTitle>
 
 							<S.ButtonsList>
-								{records.map((record, index) => (
-									<S.ExternalLink
-										href={record.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										key={`record-${index}`}
-									>
-										<strong>{record.text}</strong> ({record.region})
-									</S.ExternalLink>
-								))}
+								{records.map((record, index) => {
+									const sanatisedText = DOMPurify.sanitize(record.text);
+
+									return (
+										<S.ExternalLink
+											href={record.url}
+											target="_blank"
+											rel="noopener noreferrer"
+											key={`record-${index}`}
+										>
+											<S.ButtonText
+												dangerouslySetInnerHTML={{ __html: sanatisedText }}
+											/>
+										</S.ExternalLink>
+									);
+								})}
 							</S.ButtonsList>
 						</S.Section>
 
@@ -89,17 +70,22 @@ const Shop: React.FC = () => {
 							</S.SectionTitle>
 
 							<S.ButtonsList>
-								{merch.email && (
-									<S.Button>
-										Contact us via <strong>email</strong>
-									</S.Button>
-								)}
+								{merch.map((entry, index) => {
+									const sanatisedText = DOMPurify.sanitize(entry.text);
 
-								{merch.instagram && (
-									<S.Button>
-										Contact us via <strong>Instagram</strong>
-									</S.Button>
-								)}
+									return (
+										<S.ExternalLink
+											href={entry.url}
+											target="_blank"
+											rel="noopener noreferrer"
+											key={`merch-${index}`}
+										>
+											<S.ButtonText
+												dangerouslySetInnerHTML={{ __html: sanatisedText }}
+											/>
+										</S.ExternalLink>
+									);
+								})}
 							</S.ButtonsList>
 						</S.Section>
 					</S.Inner>

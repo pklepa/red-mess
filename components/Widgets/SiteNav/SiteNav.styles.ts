@@ -2,7 +2,7 @@ import { brand } from '@helpers/brand';
 import fonts from '@helpers/fonts';
 import { ButtonReset, navHeight, zIndex } from '@helpers/global';
 import { from, Device } from '@helpers/media';
-import { horizontalSlideIn } from '@helpers/variants';
+import { horizontalSlideIn, scaleFadeIn } from '@helpers/variants';
 import { m } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
@@ -57,7 +57,7 @@ const MobileMenu = styled(m.div).attrs({
 	initial: 'hidden',
 	animate: 'visible',
 	exit: 'hidden',
-	variants: horizontalSlideIn('-100%', 0.4),
+	variants: scaleFadeIn(1, 0.3),
 })`
 	position: fixed;
 	z-index: ${zIndex.priority};
@@ -82,6 +82,7 @@ const ListItem = styled.li<{ isCurrent?: boolean }>`
 	list-style: none;
 	padding: 0;
 	text-align: center;
+	cursor: pointer;
 
 	span {
 		display: block;
