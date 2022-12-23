@@ -2,6 +2,7 @@ import { SiteNavProps } from './SiteNav';
 
 // TODO: This information should be coming from the CMS
 export const siteNavDefaultArgs: SiteNavProps = {
+	title: 'none',
 	items: [
 		{
 			text: 'Home',
