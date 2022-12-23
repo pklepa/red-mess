@@ -11,6 +11,7 @@ import TextSpotify from '@img/text-svg/text-spotify.svg';
 import TextTidal from '@img/text-svg/text-tidal.svg';
 import TextYoutube from '@img/text-svg/text-youtube.svg';
 import SectionTitle from '@components/SectionTitle/SectionTitle';
+import AnimatedText from '@components/AnimatedText/AnimatedText';
 
 type ItemText =
 	| 'amazon'
@@ -72,14 +73,11 @@ const LinkList: React.FC<LinkListProps> = ({ items, title }) => {
 
 			<S.Content>
 				{items.map((item, index) => (
-					<S.Item
-						key={`link-list-item-${index}`}
-						href={item.url}
-						target="_blank"
-						rel="noreferrer noopener"
-					>
-						{renderLink(item)}
-					</S.Item>
+					<AnimatedText key={`link-list-item-${index}`}>
+						<S.Item href={item.url} target="_blank" rel="noreferrer noopener">
+							{renderLink(item)}
+						</S.Item>
+					</AnimatedText>
 				))}
 			</S.Content>
 		</S.Container>

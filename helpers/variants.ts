@@ -91,3 +91,19 @@ export function horizontalSlideIn(
 		},
 	};
 }
+
+export function verticalSlideIn(
+	amount?: number | string,
+	duration?: number
+): Variants {
+	return {
+		hidden: {
+			y: amount ?? '100%',
+			transition: { duration: duration ? duration / 2 : 0.3 },
+		},
+		visible: {
+			y: '0%',
+			transition: { duration: duration ?? 0.6, staggerChildren: 0.15 },
+		},
+	};
+}

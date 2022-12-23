@@ -7,6 +7,8 @@ import AboutUsBannerImage from 'public/aboutUsBanner.png';
 import ImageGallery1 from 'public/gallery-img-1.jpg';
 import TextWhoTheFAreRedMess from '@img/text-svg/text-whoTheFAreRedMess.svg';
 import Link from 'next/link';
+import AnimatedText from '@components/AnimatedText/AnimatedText';
+import { useInView } from '@hooks/useInView';
 
 export type AboutUsProps = {
 	title: string;
@@ -14,6 +16,11 @@ export type AboutUsProps = {
 };
 
 const AboutUs: React.FC<AboutUsProps> = ({ title, resourceStrings }) => {
+	const [elementRef, inView] = useInView<HTMLDivElement>(
+		{ threshold: 0.35 },
+		true
+	);
+
 	return (
 		<S.Container>
 			<S.BannerWrapper>
@@ -26,18 +33,25 @@ const AboutUs: React.FC<AboutUsProps> = ({ title, resourceStrings }) => {
 				/>
 			</S.BannerWrapper>
 
-			<S.TitleWrapper aria-label={title}>
-				<TextWhoTheFAreRedMess />
-			</S.TitleWrapper>
+			<AnimatedText preferInViewProps>
+				<S.TitleWrapper aria-label={title}>
+					<TextWhoTheFAreRedMess />
+				</S.TitleWrapper>
+			</AnimatedText>
 
-			<S.Content>
+			<S.Content ref={elementRef}>
 				<S.Header>
-					<S.LargeText
-						dangerouslySetInnerHTML={{ __html: resourceStrings.basedIn }}
-					/>
-					<S.LargeText
-						dangerouslySetInnerHTML={{ __html: resourceStrings.bornIn }}
-					/>
+					<AnimatedText inView={inView} preferInViewProps>
+						<S.LargeText
+							dangerouslySetInnerHTML={{ __html: resourceStrings.basedIn }}
+						/>
+					</AnimatedText>
+
+					<AnimatedText inView={inView} preferInViewProps reverseDirection>
+						<S.LargeText
+							dangerouslySetInnerHTML={{ __html: resourceStrings.bornIn }}
+						/>
+					</AnimatedText>
 				</S.Header>
 
 				<S.Inner>

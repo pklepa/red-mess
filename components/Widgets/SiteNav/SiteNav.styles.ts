@@ -111,8 +111,8 @@ const CloseButton = styled.button.attrs({ type: 'button' })`
 	${ButtonReset};
 
 	position: absolute;
-	right: 32px;
-	top: 32px;
+	right: 40px;
+	top: 30px;
 	z-index: 2;
 
 	width: 20px;
@@ -120,6 +120,13 @@ const CloseButton = styled.button.attrs({ type: 'button' })`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	@media ${from(Device.TabletLarge)} {
+		width: 32px;
+		height: 32px;
+		right: 56px;
+		top: 32px;
+	}
 `;
 
 const SiteNavStyles = {

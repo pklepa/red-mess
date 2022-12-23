@@ -1,6 +1,8 @@
 import { brand } from '@helpers/brand';
 import fonts from '@helpers/fonts';
 import { until, Device, from } from '@helpers/media';
+import { scaleFadeIn, verticalFadeIn } from '@helpers/variants';
+import { m } from 'framer-motion';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -8,13 +10,20 @@ const Container = styled.div`
 	flex-direction: column;
 	gap: 40px;
 	margin-bottom: 64px;
+	overflow: hidden;
 
 	@media ${from(Device.TabletLarge)} {
 		margin-bottom: 80px;
 	}
 `;
 
-const CarouselWrapper = styled.div`
+const CarouselWrapper = styled(m.div).attrs(
+	({ inView }: { inView: boolean }) => ({
+		initial: 'hidden',
+		animate: inView ? 'visible' : 'hidden',
+		variants: scaleFadeIn(1.1),
+	})
+)<{ inView: boolean }>`
 	overflow: hidden;
 	padding: 0 24px;
 `;
@@ -101,7 +110,13 @@ const ItemOverlayContent = styled.p`
 	}
 `;
 
-const IframeWrapper = styled.div`
+const IframeWrapper = styled(m.div).attrs(
+	({ inView }: { inView: boolean }) => ({
+		initial: 'hidden',
+		animate: inView ? 'visible' : 'hidden',
+		variants: verticalFadeIn(30),
+	})
+)<{ inView: boolean }>`
 	width: 100%;
 	min-height: 406px;
 	padding: 24px;

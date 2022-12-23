@@ -17,6 +17,7 @@ import { Device, until } from '@helpers/media';
 import useMediaQuery from 'hooks/useMediaQuery';
 import SectionTitle from '@components/SectionTitle/SectionTitle';
 import useIsMounted from 'hooks/useIsMounted';
+import { useInView } from '@hooks/useInView';
 // import useMedia from 'hooks/useMedia';
 
 type ItemId =
@@ -41,11 +42,16 @@ export type PublishedStuffProps = {
 };
 
 const PublishedStuff: React.FC<PublishedStuffProps> = ({ items, title }) => {
+	const [elementRef, inView] = useInView<HTMLDivElement>({ threshold: 0.35 });
 	const isMobile = useMediaQuery(until(Device.TabletLarge));
 	const isMounted = useIsMounted();
 
 	const [emblaRef] = useEmblaCarousel(
-		{ loop: false, align: isMobile ? 'center' : 'start', inViewThreshold: 1 },
+		{
+			loop: false,
+			align: isMobile ? 'center' : 'start',
+			inViewThreshold: 1,
+		},
 		[ClassNames({ selected: 'is-selected' })]
 	);
 
@@ -123,13 +129,13 @@ const PublishedStuff: React.FC<PublishedStuffProps> = ({ items, title }) => {
 	};
 
 	return (
-		<S.Container>
+		<S.Container ref={elementRef}>
 			<SectionTitle label={title}>
 				<TextPublished />
 				<TextStuff />
 			</SectionTitle>
 
-			<S.CarouselWrapper>
+			<S.CarouselWrapper inView={inView}>
 				<S.Carousel className="embla" ref={emblaRef}>
 					<div className="embla__container">
 						{items.map((item, index) => (
@@ -151,7 +157,7 @@ const PublishedStuff: React.FC<PublishedStuffProps> = ({ items, title }) => {
 				</S.Carousel>
 			</S.CarouselWrapper>
 
-			<S.IframeWrapper>
+			<S.IframeWrapper inView={inView}>
 				{/* <iframe
 					style={{ border: 0, width: '350px', height: '720px' }}
 					src="https://bandcamp.com/EmbeddedPlayer/album=3529592666/size=large/bgcol=ffffff/linkcol=de270f/transparent=true/"

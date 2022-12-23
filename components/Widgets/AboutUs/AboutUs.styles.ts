@@ -32,7 +32,6 @@ const TitleWrapper = styled.h2`
 
 	display: flex;
 	justify-content: center;
-	margin-bottom: 40px;
 
 	> svg {
 		height: 46px;
@@ -52,12 +51,12 @@ const TitleWrapper = styled.h2`
 `;
 
 const Content = styled.div`
-	padding: 0 24px;
+	padding: 40px 24px 0;
 	font-size: 16px;
 	line-height: 1.3em;
 
 	@media ${from(Device.TabletLarge)} {
-		padding: 0 48px;
+		padding: 40px 48px 0;
 	}
 `;
 
@@ -111,7 +110,9 @@ const Inner = styled.div`
 
 const Description = styled.p`
 	font-size: 18px;
-	line-height: 1.3em;
+	line-height: 2em;
+	position: relative;
+	z-index: 1;
 
 	.highlight {
 		background-color: ${brand.red};

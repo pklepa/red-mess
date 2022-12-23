@@ -19,6 +19,7 @@
 			"@components/*": ["components/*"],
 			"@containers/*": ["containers/*"],
 			"@helpers/*": ["helpers/*"],
+			"@hooks/*": ["hooks/*"],
 			"@img/*": ["img/*"]
 		}
 	},

@@ -20,6 +20,7 @@ import { publishedStuffDefaultArgs } from '@components/Widgets/PublishedStuff/Pu
 
 import AboutUs from '@components/Widgets/AboutUs/AboutUs';
 import { aboutUsDefaultArgs } from '@components/Widgets/AboutUs/AboutUs.args';
+import { withMotion } from 'hocs/withMotion';
 
 export type HomeProps = {};
 
@@ -56,4 +57,4 @@ const Home: React.FC<HomeProps> = () => {
 	);
 };
 
-export default Home;
+export default withMotion(Home);
