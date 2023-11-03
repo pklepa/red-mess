@@ -1,0 +1,71 @@
+{
+	/** React */
+	"Hook Snippet useState": {
+		"prefix": "usestate",
+		"body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = React.useState<${2:type}>(${3})"],
+		"description": "React.useState TypeScript boilerplate"
+	},
+	"Hook Snippet useEffect": {
+		"prefix": "useeffect",
+		"body": ["React.useEffect(() => {", "  ${1}", "}, [${2}])"],
+		"description": "React.useEffect hook boilerplate"
+	},
+
+	/** Framer motion */
+	"Custom variants boilerplate": {
+		"prefix": "customvariants",
+		"body": [
+			"const ${1:componentName}Variants = {",
+			"  hidden: {",
+			"    ${2:property}: ${3:value},",
+			"    transition: {",
+			"      duration: .3,",
+			"    },",
+			"  },",
+			"  visible: {",
+			"    ${2:property}: ${4:newValue},",
+			"    transition: {",
+			"      duration: .6,",
+			"    },",
+			"  }",
+			"};"
+		],
+		"description": "Custom variants boilerplate for StyledComponents"
+	},
+	"Styled Components + Framer motion attributes": {
+		"prefix": "variantsinview",
+		"body": [
+			"styled(m.${1:div}).attrs(({ inView }: { inView: boolean }) => ({",
+			"  initial: 'hidden',",
+			"  animate: inView ? 'visible' : 'hidden',",
+			"  variants: staggerChildren(),",
+			"}))<{ inView: boolean }>"
+		],
+		"description": "Adds inView variants"
+	},
+	"Styled Components + Framer simple variants only": {
+		"prefix": "variantssimple",
+		"body": ["styled(m.${1:div}).attrs({ variants: ${2:variants} })"],
+		"description": "Adds simple styled component with variants, no initial or animate props"
+	},
+
+	/** CSS */
+	"Hover media query": {
+		"prefix": "mediahover",
+		"body": [
+			"@media (hover: hover) or (pointer: fine) {",
+			"  &:hover {",
+			"    ${1:property}: ${2:value}",
+			"  }",
+			"}"
+		],
+		"description": "Media query to check if device supports hover actions"
+	},
+
+	/** General QOL snippets */
+	"Quick console.log statement with a FIXME comment": {
+		"prefix": "logfixme",
+		"body": ["// FIXME: Remove this", "console.log(${1:comment})"],
+		"description": "Adds inView variants"
+	}
+}
